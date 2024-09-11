@@ -14,6 +14,26 @@
         <h1>Todo List</h1>
         <button @click="fetchTodos">Recover</button>
 </div>
+<script>
+        new Vue({
+            el: '#app',
+            data: {
+                todos: []
+            },
+            methods: {
+                fetchTodos() {
+                    axios.get('api.php')
+                        .then(response => {
+                            console.log('Todo ricevuti:', response.data);
+                            this.todos = response.data;
+                        })
+                        .catch(error => {
+                            console.error('C\'è stato un errore nel recupero dei todo!', error);
+                        });
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

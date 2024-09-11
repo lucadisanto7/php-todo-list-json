@@ -10,7 +10,10 @@
 </head>
 
 <body>
-    
+<div id="app">
+        <h1>Todo List</h1>
+        <button @click="fetchTodos">Recover</button>
+</div>
 </body>
 
 </html>
